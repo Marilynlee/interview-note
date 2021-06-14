@@ -47,3 +47,14 @@ ES5执行上下文生命周期：
  - var: 声明的是全局变量，存在变量提升，可以多次重复声明
  - let：声明的是局部变量，不存在变量提升，不可以多次声明，存在暂时性死区（未定以前调用报错）
  - const：与let一样，但const声明时必须初始化赋值，且值不可修改（如果内存地址没变，引用类型可以更改）
+
+## 4.require与import的区别
+   - require是CommonJS规范的模块化语法，import是ECMAScript 6规范的模块化语法；
+   - require是运行时加载，import是编译时加载；
+   - require可以写在代码的任意位置，import只能写在文件的最顶端且不可在条件语句或函数作用域中使用；
+   - require通过module.exports导出的值就不能再变化，import通过export导出的值可以改变；
+   - require通过module.exports导出的是exports对象，import通过export导出是指定输出的代码；
+   - require运行时才引入模块的属性所以性能相对较低，import编译时引入模块的属性所所以性能稍高。
+
+
+
