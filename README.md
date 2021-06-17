@@ -18,7 +18,7 @@
 - [react](https://github.com/Marilynlee/interview-note/blob/main/react/react.md)
 
 ## 工程化
-- [webpack工程化](https://github.com/Marilynlee/interview-note/blob/main/工程化/webpack工程化.md)
+- [webpack工程化](https://github.com/Marilynlee/interview-note/main/main/工程化/webpack工程化.md)
 
 ## 网络和安全
 - [http](https://github.com/Marilynlee/interview-note/blob/main/网络和安全/http.md)
