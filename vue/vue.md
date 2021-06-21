@@ -139,7 +139,6 @@ diff（采用双端比较）的过程：
 - 骨架屏、缓存、开启gzip等
 
 打包优化：
-
 - 压缩代码、抽离公共文件（splitchunks）
 - cdn加载第三方模块
 - sourcemap优化
@@ -147,7 +146,8 @@ diff（采用双端比较）的过程：
 - tree shaking
 
 ## 18. vue3的优化
-- 使用createApp，而不是new Vue(); Template 支持多个根标签，Vue 2不支持多标签
+- 使用createApp，而不是new Vue(); 
+- Template 支持多个根标签，Vue 2不支持多标签
 - vue3生命周期函数从destroy变成了unmount，增加了setup替换beforeCreate和create，增加了用于调试的钩子函数onRenderTriggered和onRenderTricked
 - 新增composition组合式API，使业务逻辑不会分散到各个option中，允许用户像编写函数一样自由地表达、组合和重用有状态的组件逻辑，易于后期维护
 - setup()为组合API的入口，reactive（把一个对象响应式）、ref（把基本数据响应式）、toRef（把对象的一个属性响应式）、toRefs（把一个对象所有属性响应式）都是定响应式数据，使用颗粒度不一样
