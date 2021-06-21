@@ -75,6 +75,20 @@
 
    - abstract : 支持所有 JavaScript 运行环境，如 Node.js 服务器端。如果发现没有浏览器的 API，路由会自动强制进入这个模式.
 
+## vue router完整的导航解析流程
+- 导航被触发。
+- 在失活的组件里调用 beforeRouteLeave 守卫。
+- 调用全局的 beforeEach 守卫。
+- 在重用的组件里调用 beforeRouteUpdate 守卫 (2.2+)。
+- 在路由配置里调用 beforeEnter。
+- 解析异步路由组件。
+- 在被激活的组件里调用 beforeRouteEnter。
+- 调用全局的 beforeResolve 守卫 (2.5+)。
+- 导航被确认。
+- 调用全局的 afterEach 钩子。
+- 触发 DOM 更新。
+- 调用 beforeRouteEnter 守卫中传给 next 的回调函数，创建好的组件实例会作为回调函数的参数传入。
+
 ## 14. 虚拟 DOM 的优缺点
 **优点：**
  - 无需手动操作DOM： 只需要写好View-Model的代码逻辑，框架会根据虚拟DOM和数据双向绑定更新视图，提高开发效率

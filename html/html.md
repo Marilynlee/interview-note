@@ -1,8 +1,7 @@
 # html面试题
 
-1. W3C标准是什么？主要包括什么？
-万维网联盟（外语缩写：W3C）标准不是某一个标准，而是一系列标准的集合。主要包含三部分：结构（Structure）、表现（Presentation）和行为（Behavior）三部分的标准
-主要有：
+## 1. W3C标准是什么？主要包括什么？
+万维网联盟（外语缩写：W3C）标准不是某一个标准，而是一系列标准的集合。主要包含三部分：结构（Structure）、表现（Presentation）和行为（Behavior）三部分的标准，主要有：
  - 需要声明（DOCTYPE），告诉浏览器用什么标准来解析网页
  - 需要定义语言编码， 避免页面乱码
  - Js必须要用<script language="javascript" type="text/javascript">来开头定义，以保证在不支持js的浏览器上直接显示出来。
@@ -12,8 +11,15 @@
  - 把所有特殊符号用编码表示：空格为&nbsp; 、小于号（<）&lt、大于号（>）&gt、和号（&）&amp等
  - 标签要正确嵌套和闭合，图片添加有意义的alt属性，form表单中增加label，以增加用户友好度
 
-2. js中attribution和property的区别
+## 2. js中attribution和property的区别
    attribution是html标签上的特性，值只能为string，属于property的一个子集。而property是dom对象的属性，为js的对象属性。
    - attr设置的值会同步到property中，反之property设置的值不会同步到attr中
    - 更改attr和props上任意的值，都会反馈到html上
 
+## 3. css 加载会造成阻塞吗
+CSS加载不会阻塞DOM的解析，但会阻塞Dom的渲染。因为Render Tree依赖于DOM Tree和CSSOM Tree，所以他必须等待到CSSOM Tree构建完成。 由于JS是可操纵DOM和css样式，所以css会阻塞后面js的执行
+
+## 4. DOMContentLoaded 与 load 的区别
+- 当 DOMContentLoaded 事件触发时,仅当 DOM 解析完成后,不包括样式表,图片。
+- 当 onload 事件触发时,页面上所有的 DOM,样式表,脚本,图片等资源已经加载完毕。
+- DOMContentLoaded 早于 load

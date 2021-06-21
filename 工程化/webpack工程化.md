@@ -71,6 +71,15 @@ loader运行在打包文件之前（loader为在模块加载时的预处理文�
 ## 6.sourcemap作用
  源码经过构建工具的转换，与源码差别较大，无法排查问题。sourceMap是一个JSON文件，存储着转换后代码和转化前代码的位置对应，以及转换前代码的信息。当执行出错或debugger时，相关工具（比如google的开发者工具）可以根据sourceMap中的信息直接显示原始代码并定位到出错点。
 
+- eval： 每个module会封装到 eval 里包裹起来执行，并且会在末尾追加注释 //@ sourceURL.依靠souceURL找到原始代码的位置。并不单独产生.map文件
+- source-map： 生成一个SourceMap文件（编译速度最慢），产生一个.map文件，保存有原始代码与运行代码的映射关系， 浏览器可以通过它找到原始代码的位置。
+- hidden-source-map： 和 source-map 一样，但不会在 bundle 末尾追加注释.
+- inline-source-map： 生成一个 DataUrl 形式的 SourceMap 文件.
+- eval-source-map：	每个module会通过eval()来执行，并且生成一个DataUrl形式的SourceMap.
+- cheap-source-map： 生成一个没有列信息（column-mappings）的SourceMaps文件，不包含loader的 sourcemap（譬如 babel 的 sourcemap）
+- cheap-module-source-map： 生成一个没有列信息（column-mappings）的SourceMaps文件，同时 loader 的 sourcemap 也被简化为只包含对应行的。
+
+
 ## 7.AST抽象语法树
 - CST：解析树是包含代码所有语法信息的树型结构，又叫具象语法树CST
 - AST：实际上只是一个解析树(parse tree)的一个精简版本
@@ -83,13 +92,13 @@ loader运行在打包文件之前（loader为在模块加载时的预处理文�
 > bable是一个工具链，babel是依赖于它的插件的, 没有插件babel只是会将源码生成AST，然后在通过生成器生成和原来的源码一摸一样的代码。比如@babel/plugin-transform-react-jsx是将react中的jsx转换为react的节点对象
 3. Generate(代码生成)：将第二步经过转换过的（抽象语法树）生成新的代码。  AST转换成字符串形式的代码，同时还会创建源码映射（source maps）。代码生成其实很简单：深度优先遍历整个AST，然后构建可以表示转换后代码的字符串。
 
-### 9.Typescript编译
+## 9.Typescript编译
    - 语法分析器（Parser）：从原文件开始, 根据语言的语法生成抽象语法树（AST）
    - 联合器（Binder）：遍历并处理AST，并将AST中的声明结合放到一个Symbol中，生成带有Symbol的SourceFile
    - 类型解析器与检查器（Type resolver/Checker）：解析每种类型的构造，检查读写语义并生成适当的诊断信息
    - 生成器（Emitter）：生成输出结果，可以是以下形式之一：JavaScript（.js），声明（.d.ts），或者是source maps（.js.map）
 
-### 10.构建优化
+## 10.构建优化
 - 静态资源优化：
    - 静态资源使用CDN，减少打包体积，也可以按需加载
    - 开启gzip（compression-webpack-plugin）
