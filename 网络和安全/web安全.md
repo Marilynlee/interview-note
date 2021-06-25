@@ -76,14 +76,20 @@ sql变成SELECT * FROM user WHERE username='admin'
 ```
 
 # 安全扫描工具
-#### 1.  [Arachni](https://github.com/Arachni/arachni) 是基于Ruby的开源，功能全面，高性能的漏洞扫描框架
-   
+#### 1.  [Arachni](https://github.com/Arachni/arachni) 
+基于Ruby的开源，功能全面，高性能的漏洞扫描框架
+
 可以实施 代码注入、CSRF、文件包含检测、SQL注入、命令行注入、路径遍历等各种攻击。同时，它还提供了各种插件，可以实现表单爆破、HTTP爆破、防火墙探测等功能。针对大型网站，该工具支持会话保持、浏览器集群、快照等功能，帮助用户更好实施渗透测试。
 
-#### 2.  [Mozilla HTTP Observatory](https://github.com/mozilla/http-observatory/) 是Mozilla最近发布的一款名为Observatory的网站安全分析工具，意在鼓励开发者和系统管理员增强自己网站的安全配置
+#### 2.  [Mozilla HTTP Observatory](https://github.com/mozilla/http-observatory/) 
+Mozilla最近发布的一款名为Observatory的网站安全分析工具，意在鼓励开发者和系统管理员增强自己网站的安全配置
 
 检查的主要范围包括： Cookie   跨源资源共享（CORS）  内容安全策略（CSP）    HTTP公钥固定（Public Key Pinning）  HTTP严格安全传输（HSTS）状态    是否存在HTTP到HTTPs的自动重定向  子资源完整性（Subresource Integrity）  X-Frame-Options    X-XSS-Protection
 
-#### 3.  [W3af](https://github.com/andresriancho/w3af) 是一个基于Python的Web应用安全扫描器
+#### 3.  [W3af](https://github.com/andresriancho/w3af) 
+一个基于Python的Web应用安全扫描器
 
 能够识别200多个漏洞，包括跨站点脚本、SQL注入和操作系统命令。
+
+---------------
+[返回主页](https://github.com/Marilynlee/interview-note)

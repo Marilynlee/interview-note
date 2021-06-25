@@ -23,3 +23,6 @@ CSS加载不会阻塞DOM的解析，但会阻塞Dom的渲染。因为Render Tree
 - 当 DOMContentLoaded 事件触发时,仅当 DOM 解析完成后,不包括样式表,图片。
 - 当 onload 事件触发时,页面上所有的 DOM,样式表,脚本,图片等资源已经加载完毕。
 - DOMContentLoaded 早于 load
+
+---------------
+[返回主页](https://github.com/Marilynlee/interview-note)

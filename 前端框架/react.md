@@ -71,6 +71,5 @@ setState后发生了什么：
         - 删除：老的component类型在新集合中，但element不同则不能直接复用和更新，或者老component不在新集合里，需要执行删除操作
 
 
-
-
-
+---------------
+[返回主页](https://github.com/Marilynlee/interview-note)

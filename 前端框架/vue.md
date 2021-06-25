@@ -154,3 +154,7 @@ diff（采用双端比较）的过程：
 - Teleport可以使dom结构应该完全剥离Vue顶层组件挂载的DOM；同时还可以使用到Vue组件内的状态（data或者props）的值
 - Suspense内置组件，提供两个template slot, 刚开始会渲染一个fallback 状态下的内容， 直到到达某个条件后才会渲染default状态的正式内容，通过使用Suspense组件进行展示异步渲染就更加的简单
 - 更有好的支持tree-shaking：重构了全局和内部API，nextTick、observe、compile、set、delete等可以按需引入
+
+
+---------------
+[返回主页](https://github.com/Marilynlee/interview-note)
